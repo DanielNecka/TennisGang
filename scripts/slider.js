@@ -13,9 +13,9 @@ if (sliderContainer && nextBtn && prevBtn) {
       return;
     }
 
-    const prev = sliderContainer.querySelector('.prevCard');
-    const current = sliderContainer.querySelector('.currentCard');
-    const next = sliderContainer.querySelector('.nextCard');
+    const [prev, current, next] = ['prevCard', 'currentCard', 'nextCard'].map((cls) =>
+      sliderContainer.querySelector(`.${cls}`)
+    );
 
     if (!prev || !current || !next) {
       return;
@@ -26,10 +26,10 @@ if (sliderContainer && nextBtn && prevBtn) {
     sliderContainer.dataset.direction = direction;
 
     const cards = [prev, current, next];
-    let finished = 0;
-    let safetyTimer;
+    let pending = cards.length;
+    let safetyTimer = 0;
 
-    const cleanup = () => {
+    const done = () => {
       if (!isAnimating) {
         return;
       }
@@ -37,40 +37,38 @@ if (sliderContainer && nextBtn && prevBtn) {
       isAnimating = false;
       sliderContainer.classList.remove('is-animating');
       delete sliderContainer.dataset.direction;
-
       if (safetyTimer) {
         clearTimeout(safetyTimer);
-        safetyTimer = undefined;
-      }
-    };
-
-    const handleTransitionEnd = (event) => {
-      if (event.propertyName !== 'transform') {
-        return;
-      }
-
-      finished += 1;
-
-      if (finished === cards.length) {
-        cleanup();
+        safetyTimer = 0;
       }
     };
 
     cards.forEach((card) => {
-      card.addEventListener('transitionend', handleTransitionEnd, { once: true });
+      card.addEventListener(
+        'transitionend',
+        ({ propertyName }) => {
+          if (propertyName === 'transform' && --pending === 0) {
+            done();
+          }
+        },
+        { once: true }
+      );
     });
 
-    safetyTimer = setTimeout(cleanup, SLIDE_DURATION + 80);
+    safetyTimer = setTimeout(done, SLIDE_DURATION + 80);
 
-    if (direction === 'next') {
-      prev.classList.replace('prevCard', 'nextCard');
-      current.classList.replace('currentCard', 'prevCard');
-      next.classList.replace('nextCard', 'currentCard');
-    } else {
-      next.classList.replace('nextCard', 'prevCard');
-      current.classList.replace('currentCard', 'nextCard');
-      prev.classList.replace('prevCard', 'currentCard');
-    }
+    (direction === 'next'
+      ? [
+          [prev, 'prevCard', 'nextCard'],
+          [current, 'currentCard', 'prevCard'],
+          [next, 'nextCard', 'currentCard'],
+        ]
+      : [
+          [next, 'nextCard', 'prevCard'],
+          [current, 'currentCard', 'nextCard'],
+          [prev, 'prevCard', 'currentCard'],
+        ]
+    ).forEach(([card, from, to]) => card.classList.replace(from, to));
   };
 
   nextBtn.addEventListener('click', () => rotate('next'));

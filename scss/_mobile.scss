@@ -1,5 +1,4 @@
 @use 'variables' as *;
-@use 'jsColorsTemp' as *;
 @use 'animation' as *;
 
 .siteHeader {
@@ -417,6 +416,14 @@
                     .couponValue {
                         margin: 0;
                     }
+                    
+                    .green {
+                        color: green;
+                    }
+
+                    .red {
+                        color: red;
+                    }
                 }
 
                 .firstRow {
@@ -431,20 +438,22 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
         margin-top: 60px;
+        gap: 20px;
 
         .prosContainer {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: 20px;
 
             width: 90%;
             padding: 30px 20px;
-
+            box-sizing: border-box;
             background-color: $green;
             border-radius: 12px;
+
+            box-shadow: 5px 5px 15px 0 rgba(66, 68, 90, 0.37);
 
             .prosHeading {
                 font-size: 24px;
@@ -453,18 +462,80 @@
 
                 color: #ffffff;
             }
-
-            .prosIcon {
+            div{
                 display: flex;
-                justify-content: center;
                 align-items: center;
+                gap: 10px;
+                .prosIcon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                img {
-                    width: 40px;
-                    height: auto;
+                    img {
+                        width: 40px;
+                        height: auto;
+                    }
+                }
+                .prosText {
+                    margin-left: 15px;
+                        
+                    font-size: 16px;
+                    color: #ffffff;
+                    span{
+                        font-weight: 600;
+                    }
                 }
             }
         }
+        .consContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+
+            width: 90%;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            background-color: $cupon-bg;
+            border-radius: 12px;
+
+            box-shadow: 5px 5px 15px 0 rgba(66, 68, 90, 0.37);
+            .consHeading {
+                font-size: 24px;
+                font-weight: 700;
+                text-align: center;
+
+                color: rgb(0, 0, 0);
+            }
+            div{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                .prosIcon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 40px;
+                        height: auto;
+                    }
+                }
+                .prosText {
+                    margin-left: 15px;
+                        
+                    font-size: 16px;
+                    color: rgb(0, 0, 0);
+                    span{
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .telegramInfoSection {
+        display: none;
     }
 
     .siteFooter {
