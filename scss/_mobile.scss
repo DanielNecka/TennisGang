@@ -1,6 +1,7 @@
 @use 'variables' as *;
 @use 'jsColorsTemp' as *;
-@use 'twojStaryJestWPenisGangu.scss' as *;
+@use 'animation' as *;
+
 header{
     position: sticky;
     top: 0;
@@ -125,6 +126,145 @@ header{
             }
             
         }   
+
+        // slider SECTION
+        .opinionsSlider {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .sliderTitle {
+        max-width: 90%;
+
+        font-size: 32px;
+        font-weight: 700;
+
+        margin-left: 10px;
+        margin-bottom: -40px;
+
+        color: $green;
+        text-align: center;
+    }
+
+    .sliderContainer {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        .sliderNav {
+            width: 60%;
+            max-width: 60%;
+            min-width: 300px;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+
+            padding: 0px 5px;
+            box-sizing: border-box;
+
+            z-index: 10;
+
+            .sliderBtn {
+                width: 24px;
+                height: 24px;
+            }
+
+            .prevBtn {
+                background: url(../assets/vectors/next.svg);
+            }
+
+            .nextBtn {
+                background: url(../assets/vectors/prev.svg);
+            }
+        }
+
+        .sliderCard {
+            width: 60%;
+            max-width: 60%;
+            min-width: 300px;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 40px 20px;
+            box-sizing: border-box;
+
+            background-color: $cupon-bg;
+            box-shadow: 5px 5px 15px 0px rgba(66, 68, 90, 0.37);
+
+            .person {
+                width: 50px;
+                height: 50px;
+                
+                border-radius: 50%;
+
+                background: url(../assets/temp/account_circle_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg);
+                background-size: cover;
+            }
+
+            .right {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                grid-template-rows: repeat(2, auto);
+                gap: 10px 20px;
+                margin-left: 30px;
+                text-align: right;
+
+                div {
+                    text-align: center;
+
+                    span {
+                        color: $green;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        /* define per-card CSS variables that keyframes will read from so
+           animations interpolate from each card's own visual state */
+        .currentCard {
+            /* center */
+            --from-transform: translate(0px, 0px) rotate(0deg) scale(1);
+            --to-transform: translate(0px, 0px) rotate(0deg) scale(1);
+            transform: var(--from-transform);
+        }
+
+        .prevCard {
+            /* use the individual transform property so keyframes that animate
+               translate/scale won't overwrite rotation and cause a visual jump */
+                filter: blur(2px);
+                /* position and rotation baked into the full transform variable */
+                --from-transform: translate(-80%, 70px) rotate(-10deg) scale(0.985);
+                --to-transform: translate(0px, 0px) rotate(0deg) scale(1);
+                transform: var(--from-transform);
+             position: absolute;
+
+            margin: auto;
+            z-index: -1;
+        }
+
+        .nextCard {
+            /* see note above */
+            filter: blur(2px);
+            /* mirror the previous card but to the right */
+            --from-transform: translate(80%, 70px) rotate(10deg) scale(0.985);
+            --to-transform: translate(0px, 0px) rotate(0deg) scale(1);
+            transform: var(--from-transform);
+                    position: absolute;
+            margin: auto;
+            z-index: -1;
+        }
+    }
+}
 
         // STATISTICS SECTION
         .cuponSection {
