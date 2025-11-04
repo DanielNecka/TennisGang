@@ -1,10 +1,8 @@
 'use strict';
 
 const sliderContainer = document.querySelector('.sliderContainer');
-const nextBtn = document.querySelector('.nextBtn');
-const prevBtn = document.querySelector('.prevBtn');
 
-if (sliderContainer && nextBtn && prevBtn) {
+if (sliderContainer) {
   const SLIDE_DURATION = 480;
   let isAnimating = false;
 
@@ -71,6 +69,17 @@ if (sliderContainer && nextBtn && prevBtn) {
     ).forEach(([card, from, to]) => card.classList.replace(from, to));
   };
 
-  nextBtn.addEventListener('click', () => rotate('next'));
-  prevBtn.addEventListener('click', () => rotate('prev'));
+  sliderContainer.addEventListener('click', (event) => {
+    const target = event.target.closest('.sliderBtn');
+
+    if (!target || !sliderContainer.contains(target)) {
+      return;
+    }
+
+    if (target.classList.contains('nextBtn')) {
+      rotate('next');
+    } else if (target.classList.contains('prevBtn')) {
+      rotate('prev');
+    }
+  });
 }

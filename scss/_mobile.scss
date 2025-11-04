@@ -211,6 +211,8 @@
             text-align: center;
 
             color: $green;
+
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
         .sliderContainer {
@@ -224,39 +226,6 @@
             height: 300px;
 
             overflow: hidden;
-
-            .sliderNav {
-                position: absolute;
-
-                display: flex;
-                justify-content: space-between;
-
-                width: 60%;
-                max-width: 60%;
-                min-width: 300px;
-                padding: 0 5px;
-
-                box-sizing: border-box;
-
-                z-index: 10;
-
-                .sliderBtn {
-                    width: 24px;
-                    height: 24px;
-
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: contain;
-                }
-
-                .prevBtn {
-                    background-image: url(../assets/vectors/next.svg);
-                }
-
-                .nextBtn {
-                    background-image: url(../assets/vectors/prev.svg);
-                }
-            }
 
             .sliderCard {
                 display: flex;
@@ -273,6 +242,23 @@
 
                 background-color: $cupon-bg;
                 box-shadow: 5px 5px 15px 0 rgba(66, 68, 90, 0.37);
+
+                                .sliderBtn {
+                    width: 24px;
+                    height: 24px;
+
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+
+                .prevBtn {
+                    background-image: url(../assets/vectors/next.svg);
+                }
+
+                .nextBtn {
+                    background-image: url(../assets/vectors/prev.svg);
+                }
 
                 .cardLeft {
                     display: flex;
