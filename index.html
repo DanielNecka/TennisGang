@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="apple-touch-icon" href="./assets/images/favIcon.svg">
+
+    <script src="./scripts/slider.js" defer></script>
+
 </head>
 <body>
     <!-- Header navigation menu -->
@@ -35,7 +38,7 @@
         </nav>
     </header>
     <main>
-        <article class="heroes">
+        <article>
                 <h2>Najlepsze przewidywania zakładów sportowych</h2>
 
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -64,6 +67,53 @@
                     <p>skuteczności przewidywań</p>
                 </li>
             </ul>
+        </section>
+
+        <!-- Slider with Opinions -->
+        <section class="opinionsSlider">
+            <h3 class="sliderTitle">Statystyki naszych użytkowników</h3>
+
+            <div class="sliderContainer">
+                <nav class="sliderNav">
+                    <div class="nextBtn sliderBtn"></div>
+
+                    <div class="prevBtn sliderBtn"></div>
+                </nav>
+
+                <div class="prevCard sliderCard">
+                    <div class="left">
+                        <div class="person"></div>
+                    </div>
+                    <div class="right">
+                        <div>wplata: <span>100zł</span></div>
+                        <div>wypłata: <span>1000zł</span></div>
+                        <div><span>2 </span>zakład</div>
+                        <div>zysk: <span>67%</span></div>
+                    </div>
+                </div>
+                <div class="currentCard sliderCard">
+                    <div class="left">
+                        <div class="person"></div>
+                    </div>
+                    <div class="right">
+                        <div>wplata: <span>300zł</span></div>
+                        <div>wypłata: <span>1500zł</span></div>
+                        <div><span>1 </span>zakład</div>
+                        <div>zysk: <span>500%</span></div>
+                    </div>
+                </div>
+                <div class="nextCard sliderCard">
+                    <div class="left">
+                        <div class="person"></div>
+                    </div>
+                    <div class="right">
+                        <div>wplata: <span>420zł</span></div>
+                        <div>wypłata: <span>6700zł</span></div>
+                        <div><span>6,7 </span>zakład</div>
+                        <div>zysk: <span>40%</span></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Last Cupons -->
@@ -138,6 +188,20 @@
                 </div>
             </div>
         </section>
+        <!-- Pros of investing -->
+         <section class="user-pros">
+            <div class="pros-container">
+                <h3>Plusy z obstawianiem z Pennis Gangiem</h3>
+                <div><img src="./assets/vectors/Check-white.svg" alt=""></div>
+            </div>
+         </section>
     </main>
+    <footer>
+        <img src="./assets/images/logoTenisGang.svg" alt="Tennis Gang Logo">
+        <div >
+            <a href="">Privacy Policy</a>
+            <a href="">Disclaimer</a>
+        </div>
+    </footer>
 </body>
 </html>

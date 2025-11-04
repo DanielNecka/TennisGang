@@ -9,10 +9,10 @@
   </style>
 
   <!-- Tekst -->
-  <text x="0" y="40" class="text">TENNIS</text>
+  <text x="0" y="40" class="text">PENNIS</text>
   <text x="0" y="100" class="text" transform="translate(20,0)">GANG</text>
 
-  <!-- Piłka tenisowa z wyciętymi paskami -->
+  <!-- Piłka tenisowa z wyciętymi paskami 220 -->
   <g transform="translate(220,0)">
     <!-- Maska definiująca wycięcia -->
     <mask id="cutMask">

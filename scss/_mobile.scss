@@ -1,13 +1,14 @@
 @use 'variables' as *;
 @use 'jsColorsTemp' as *;
-
-
+@use 'twojStaryJestWPenisGangu.scss' as *;
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
 @media screen and (max-width: 768px){
-    // HEADER SECTION
     header{
-        width: 100%;
-        position: sticky;
-        top: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -58,6 +59,7 @@
                 font-size: 32px;
                 font-weight: 700;
                 color: $green;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             }
             p{
                 width: 100%;
@@ -126,6 +128,7 @@
 
         // STATISTICS SECTION
         .cuponSection {
+            margin-top: 70px;
             display: flex;
             flex-direction: column; 
             align-items: center;
@@ -138,13 +141,12 @@
                 margin-bottom: 20px;
 
                 color: $green;
-
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 text-align: center;
             }
 
             .cuponDisplayContainer {
                 width: 100%;
-                height: 200px;
 
                 display: flex;
                 align-items: center;
@@ -182,6 +184,49 @@
                     }
                 }
             }
+        }
+        // USER PROS SECTION
+        .user-pros{
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            .pros-container{
+                width: 90%;
+                height: auto;
+                background-color: $green;
+                h3{
+                    text-align: center;
+                    color: white;
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+            }
+        }
+        
+    }
+    footer{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        border-top: 1px solid lightgray;
+        padding: 15px 30px;
+        box-sizing: border-box;
+        img{
+            width: 30%;
+        }
+        div{
+            display: flex;
+            gap: 8px;
+        }
+        a{
+            text-decoration: none;
+            color: $grey-lg;
+            font-size: 14px;
         }
     }
 }
