@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Maska wycinająca łuki -->
+  <mask id="cutMask">
+    <!-- białe = widoczne, czarne = wycięte -->
+    <rect width="120" height="120" fill="white"/>
+    <!-- Lewa krzywa -->
+    <path d="M10 -10 C45 40, 45 80, 10 130"
+          stroke="black" stroke-width="15" fill="none"/>
+    <!-- Prawa krzywa -->
+    <path d="M110 -10 C75 40, 75 80, 110 130"
+          stroke="black" stroke-width="15" fill="none"/>
+  </mask>
+
+  <!-- Piłka -->
+  <circle cx="60" cy="60" r="60" fill="#FFFFFF" mask="url(#cutMask)"/>
+</svg>
