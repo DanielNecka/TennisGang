@@ -19,58 +19,60 @@
 </head>
 <body>
     <!-- Header navigation menu -->
-    <header>
-        <a href="">
-            <img src="./assets/images/logoTenisGang.svg" alt="Tennis Gang logo">
+    <header class="siteHeader">
+        <a href="" class="logoLink">
+            <img src="./assets/images/logoTenisGang.svg" alt="Tennis Gang logo" class="logoImage">
         </a>
 
-        <nav>
-            <ul>
-                <li><a href="#home">Statystyki</a></li>
-                <li><a href="#about">Opinie</a></li>
-                <li><a href="#contact">O nas</a></li>
-                <a href="https://www.onet.pl/" target="_blank" class="telegram-link-header">
-                    <div class="button-header btn">
-                        Dołącz na Telegram
-                    </div>
-                </a>
+        <nav class="mainNav">
+            <ul class="navList">
+                <li class="navItem"><a href="#home" class="navLink">Statystyki</a></li>
+                <li class="navItem"><a href="#about" class="navLink">Opinie</a></li>
+                <li class="navItem"><a href="#contact" class="navLink">O nas</a></li>
+                <li class="navItem navItemCta">
+                    <a href="https://www.onet.pl/" target="_blank" class="telegramLinkHeader">
+                        <div class="headerButton btn">
+                            Dołącz na Telegram
+                        </div>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <article>
-                <h2>Najlepsze przewidywania zakładów sportowych</h2>
+    <main class="pageMain">
+        <article class="heroArticle" id="home">
+                <h2 class="heroTitle">Najlepsze przewidywania zakładów sportowych</h2>
 
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p class="heroDescription">Lorem ipsum dolor sit amet consectetur.</p>
 
-                <a href="https://www.onet.pl/" target="_blank" class="link">
-                    <div class="button-article btn">
+                <a href="https://www.onet.pl/" target="_blank" class="heroLink link">
+                    <div class="heroButton btn">
                         Dołącz na Telegram
                     </div>
                 </a>
         </article>
 
         <!-- User Guarantess -->
-        <section class="user-guarantess">
-            <h3>Wyniki które mówią same za siebie</h3>
-            <ul>
-                <li>
-                    <div><img src="./assets/vectors/Arrow-up-stack.svg" alt="Arrow-up-icon">+1500 zł</div>
-                    <p>średni zysk / miesiąc</p>
+        <section class="userGuaranteesSection">
+            <h3 class="userGuaranteesHeading">Wyniki które mówią same za siebie</h3>
+            <ul class="guaranteeList">
+                <li class="guaranteeItem">
+                    <div class="guaranteeStat"><img src="./assets/vectors/Arrow-up-stack.svg" alt="Arrow-up-icon">+1500 zł</div>
+                    <p class="guaranteeDescription">średni zysk / miesiąc</p>
                 </li>
-                <li>
-                    <div><img src="./assets/vectors/Groups.svg" alt="">1500+</div>
-                    <p>liczba klientów</p>
+                <li class="guaranteeItem">
+                    <div class="guaranteeStat"><img src="./assets/vectors/Groups.svg" alt="User icon">1500+</div>
+                    <p class="guaranteeDescription">liczba klientów</p>
                 </li>
-                <li>
-                    <div><img src="./assets/vectors/Check.svg" alt="">70%</div>
-                    <p>skuteczności przewidywań</p>
+                <li class="guaranteeItem">
+                    <div class="guaranteeStat"><img src="./assets/vectors/Check.svg" alt="Check icon">70%</div>
+                    <p class="guaranteeDescription">skuteczności przewidywań</p>
                 </li>
             </ul>
         </section>
 
         <!-- Slider with Opinions -->
-        <section class="opinionsSlider">
+        <section class="opinionsSlider" id="about">
             <h3 class="sliderTitle">Statystyki naszych użytkowników</h3>
 
             <div class="sliderContainer">
@@ -81,126 +83,128 @@
                 </nav>
 
                 <div class="prevCard sliderCard">
-                    <div class="left">
-                        <div class="person"></div>
+                    <div class="cardLeft">
+                        <div class="sliderPerson"></div>
                     </div>
-                    <div class="right">
-                        <div>wplata: <span>100zł</span></div>
-                        <div>wypłata: <span>1000zł</span></div>
-                        <div><span>2 </span>zakład</div>
-                        <div>zysk: <span>67%</span></div>
+                    <div class="cardRight">
+                        <div class="sliderRow">wplata: <span>100zł</span></div>
+                        <div class="sliderRow">wypłata: <span>1000zł</span></div>
+                        <div class="sliderRow"><span>2 </span>zakład</div>
+                        <div class="sliderRow">zysk: <span>67%</span></div>
                     </div>
                 </div>
                 <div class="currentCard sliderCard">
-                    <div class="left">
-                        <div class="person"></div>
+                    <div class="cardLeft">
+                        <div class="sliderPerson"></div>
                     </div>
-                    <div class="right">
-                        <div>wplata: <span>300zł</span></div>
-                        <div>wypłata: <span>1500zł</span></div>
-                        <div><span>1 </span>zakład</div>
-                        <div>zysk: <span>500%</span></div>
+                    <div class="cardRight">
+                        <div class="sliderRow">wplata: <span>300zł</span></div>
+                        <div class="sliderRow">wypłata: <span>1500zł</span></div>
+                        <div class="sliderRow"><span>1 </span>zakład</div>
+                        <div class="sliderRow">zysk: <span>500%</span></div>
                     </div>
                 </div>
                 <div class="nextCard sliderCard">
-                    <div class="left">
-                        <div class="person"></div>
+                    <div class="cardLeft">
+                        <div class="sliderPerson"></div>
                     </div>
-                    <div class="right">
-                        <div>wplata: <span>420zł</span></div>
-                        <div>wypłata: <span>6700zł</span></div>
-                        <div><span>6,7 </span>zakład</div>
-                        <div>zysk: <span>40%</span></div>
+                    <div class="cardRight">
+                        <div class="sliderRow">wplata: <span>420zł</span></div>
+                        <div class="sliderRow">wypłata: <span>6700zł</span></div>
+                        <div class="sliderRow"><span>6,7 </span>zakład</div>
+                        <div class="sliderRow">zysk: <span>40%</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Last Cupons -->
-        <section class="cuponSection">
-            <h3 class="cuponTitle">Nasze ostatnie typy</h3>
+        <section class="couponSection" id="contact">
+            <h3 class="couponTitle">Nasze ostatnie typy</h3>
 
-            <div class="cuponDisplayContainer">
-                <div class="card">
-                    <div class="row firstRow">
-                        <div class="boldText">Penis</div>
-                        <div class="date">3.11.2025</div>
+            <div class="couponDisplayContainer">
+                <div class="couponCard">
+                    <div class="couponRow firstRow">
+                        <div class="couponHighlight">Penis</div>
+                        <div class="couponDate">3.11.2025</div>
                     </div>
-                    <div class="row">
-                        <div class="boldText">Daniil Medvedev - Jannik Sinner</div>
+                    <div class="couponRow">
+                        <div class="couponHighlight">Daniil Medvedev - Jannik Sinner</div>
                     </div>
-                    <div class="row">
-                        <p>Typ:</p>
-                        <p>Djokovic wygra 2:1</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Typ:</p>
+                        <p class="couponValue">Djokovic wygra 2:1</p>
                     </div>
-                    <div class="row">
-                        <p>Kurs:</p>
-                        <p>1.75</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Kurs:</p>
+                        <p class="couponValue">1.75</p>
                     </div>
-                    <div class="row">
-                        <p>Wynik:</p>
-                        <p class="green">wygrana</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Wynik:</p>
+                        <p class="couponValue green">wygrana</p>
                     </div>
                 </div>
             
-                <div class="card">
-                    <div class="row firstRow">
-                        <div class="boldText">Penis</div>
-                        <div class="date">3.11.2025</div>
+                <div class="couponCard">
+                    <div class="couponRow firstRow">
+                        <div class="couponHighlight">Penis</div>
+                        <div class="couponDate">3.11.2025</div>
                     </div>
-                    <div class="row">
-                        <div class="boldText">Daniil Medvedev - Jannik Sinner</div>
+                    <div class="couponRow">
+                        <div class="couponHighlight">Daniil Medvedev - Jannik Sinner</div>
                     </div>
-                    <div class="row">
-                        <p>Typ:</p>
-                        <p>Djokovic wygra 2:1</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Typ:</p>
+                        <p class="couponValue">Djokovic wygra 2:1</p>
                     </div>
-                    <div class="row">
-                        <p>Kurs:</p>
-                        <p>1.75</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Kurs:</p>
+                        <p class="couponValue">1.75</p>
                     </div>
-                    <div class="row">
-                        <p>Wynik:</p>
-                        <p class="green">wygrana</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Wynik:</p>
+                        <p class="couponValue green">wygrana</p>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="row firstRow">
-                        <div class="boldText">Penis</div>
-                        <div class="date">3.11.2025</div>
+                <div class="couponCard">
+                    <div class="couponRow firstRow">
+                        <div class="couponHighlight">Penis</div>
+                        <div class="couponDate">3.11.2025</div>
                     </div>
-                    <div class="row">
-                        <div class="boldText">Daniil Medvedev - Jannik Sinner</div>
+                    <div class="couponRow">
+                        <div class="couponHighlight">Daniil Medvedev - Jannik Sinner</div>
                     </div>
-                    <div class="row">
-                        <p>Typ:</p>
-                        <p>Djokovic wygra 2:1</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Typ:</p>
+                        <p class="couponValue">Djokovic wygra 2:1</p>
                     </div>
-                    <div class="row">
-                        <p>Kurs:</p>
-                        <p>1.75</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Kurs:</p>
+                        <p class="couponValue">1.75</p>
                     </div>
-                    <div class="row">
-                        <p>Wynik:</p>
-                        <p class="green">wygrana</p>
+                    <div class="couponRow">
+                        <p class="couponLabel">Wynik:</p>
+                        <p class="couponValue green">wygrana</p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Pros of investing -->
-         <section class="user-pros">
-            <div class="pros-container">
-                <h3>Plusy z obstawianiem z Pennis Gangiem</h3>
-                <div><img src="./assets/vectors/Check-white.svg" alt=""></div>
+         <section class="userProsSection">
+            <div class="prosContainer">
+                <h3 class="prosHeading">Plusy z obstawianiem z Pennis Gangiem</h3>
+                <div class="prosIcon">
+                    <img src="./assets/vectors/Check-white.svg" alt="Check icon">
+                </div>
             </div>
          </section>
     </main>
-    <footer>
-        <img src="./assets/images/logoTenisGang.svg" alt="Tennis Gang Logo">
-        <div >
-            <a href="">Privacy Policy</a>
-            <a href="">Disclaimer</a>
+    <footer class="siteFooter">
+        <img src="./assets/images/logoTenisGang.svg" alt="Tennis Gang Logo" class="footerLogo">
+        <div class="footerLinks">
+            <a href="" class="footerLink">Privacy Policy</a>
+            <a href="" class="footerLink">Disclaimer</a>
         </div>
     </footer>
 </body>
